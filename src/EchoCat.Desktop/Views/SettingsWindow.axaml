@@ -1,0 +1,150 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="EchoCat.Desktop.Views.SettingsWindow"
+        Width="420"
+        Height="520"
+        MinWidth="380"
+        MinHeight="320"
+        CanResize="True"
+        WindowStartupLocation="CenterOwner"
+        Title="EchoCat 设置"
+        Background="#FFF8FA">
+  <ScrollViewer VerticalScrollBarVisibility="Auto"
+                HorizontalScrollBarVisibility="Disabled">
+    <StackPanel Margin="18" Spacing="16">
+      <StackPanel Spacing="4">
+        <TextBlock Text="EchoCat"
+                   FontSize="22"
+                   FontWeight="SemiBold"
+                   Foreground="#3B2E38" />
+        <TextBlock Text="桌宠设置"
+                   FontSize="13"
+                   Foreground="#7A6572" />
+      </StackPanel>
+
+      <Border Padding="12"
+              Background="#F7FFFFFF"
+              BorderBrush="#33A78FA0"
+              BorderThickness="1"
+              CornerRadius="12">
+        <StackPanel Spacing="8">
+          <TextBlock Text="当前交互"
+                     FontSize="14"
+                     FontWeight="SemiBold"
+                     Foreground="#3B2E38" />
+          <TextBlock Text="单击摸头，双击聊天，拖动身体移动，右键打开菜单。"
+                     TextWrapping="Wrap"
+                     FontSize="13"
+                     Foreground="#5C4D57" />
+        </StackPanel>
+      </Border>
+
+      <Border Padding="12"
+              Background="#F7FFFFFF"
+              BorderBrush="#33A78FA0"
+              BorderThickness="1"
+              CornerRadius="12">
+        <StackPanel Spacing="10">
+          <TextBlock Text="AI"
+                     FontSize="14"
+                     FontWeight="SemiBold"
+                     Foreground="#3B2E38" />
+
+          <StackPanel Spacing="4">
+            <TextBlock Text="Provider"
+                       FontSize="12"
+                       Foreground="#7A6572" />
+            <ComboBox x:Name="AiProviderBox"
+                      HorizontalAlignment="Stretch"
+                      SelectedIndex="0">
+              <ComboBoxItem Tag="mock"
+                            Content="离线 Mock" />
+              <ComboBoxItem Tag="openai"
+                            Content="OpenAI-compatible" />
+            </ComboBox>
+          </StackPanel>
+
+          <StackPanel Spacing="4">
+            <TextBlock Text="Endpoint"
+                       FontSize="12"
+                       Foreground="#7A6572" />
+            <TextBox x:Name="AiEndpointBox"
+                     PlaceholderText="https://api.openai.com/v1" />
+          </StackPanel>
+
+          <StackPanel Spacing="4">
+            <TextBlock Text="Model"
+                       FontSize="12"
+                       Foreground="#7A6572" />
+            <TextBox x:Name="AiModelBox"
+                     PlaceholderText="gpt-5.6" />
+          </StackPanel>
+
+          <StackPanel Spacing="4">
+            <TextBlock Text="API Key"
+                       FontSize="12"
+                       Foreground="#7A6572" />
+            <TextBox x:Name="AiApiKeyBox"
+                     PlaceholderText="OpenAI API Key" />
+          </StackPanel>
+
+          <StackPanel Spacing="4">
+            <TextBlock Text="自定义提示词"
+                       FontSize="12"
+                       Foreground="#7A6572" />
+            <TextBox x:Name="AiInstructionsBox"
+                     Height="96"
+                     AcceptsReturn="True"
+                     TextWrapping="Wrap"
+                     PlaceholderText="定义 EchoCat 的语气、边界和回答风格" />
+          </StackPanel>
+
+          <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+            <Button Content="保存 AI 设置"
+                    Padding="12,8"
+                    Click="SaveAiButton_OnClick" />
+            <TextBlock x:Name="AiSaveStatus"
+                       Grid.Column="1"
+                       VerticalAlignment="Center"
+                       TextWrapping="Wrap"
+                       FontSize="12"
+                       Foreground="#7A6572" />
+          </Grid>
+        </StackPanel>
+      </Border>
+
+      <Border Padding="12"
+              Background="#F7FFFFFF"
+              BorderBrush="#33A78FA0"
+              BorderThickness="1"
+              CornerRadius="12">
+        <StackPanel Spacing="10">
+          <TextBlock Text="窗口"
+                     FontSize="14"
+                     FontWeight="SemiBold"
+                     Foreground="#3B2E38" />
+          <CheckBox x:Name="TopmostCheckBox"
+                    Content="始终置顶" />
+          <CheckBox x:Name="WelcomeBubbleCheckBox"
+                    Content="启动时显示欢迎气泡" />
+          <CheckBox x:Name="StartHiddenCheckBox"
+                    Content="启动后隐藏到托盘" />
+        </StackPanel>
+      </Border>
+
+      <Border Padding="12"
+              Background="#F7FFFFFF"
+              BorderBrush="#33A78FA0"
+              BorderThickness="1"
+              CornerRadius="12">
+        <StackPanel Spacing="10">
+          <TextBlock Text="皮肤"
+                     FontSize="14"
+                     FontWeight="SemiBold"
+                     Foreground="#3B2E38" />
+          <StackPanel x:Name="SkinList" Spacing="8" />
+        </StackPanel>
+      </Border>
+    </StackPanel>
+  </ScrollViewer>
+</Window>

@@ -1,0 +1,24 @@
+{
+  "id": "soft-vector-cat",
+  "displayName": "Soft Vector Cat",
+  "renderer": "vector-soft-cat",
+  "version": "0.1.0",
+  "author": "EchoCat",
+  "palette": {
+    "fur": "#FFF8FA",
+    "furShadow": "#F4DCE7",
+    "ink": "#3B2E38",
+    "blush": "#FFC4D5",
+    "bubbleBackground": "#F7FFFFFF",
+    "bubbleBorder": "#55A78FA0",
+    "panelBackground": "#F4FFFFFF",
+    "panelBorder": "#33A78FA0",
+    "moodAccents": {
+      "calm": "#8DE1C1",
+      "happy": "#FF8FB3",
+      "curious": "#7AC7FF",
+      "thinking": "#B69CFF",
+      "sleepy": "#9EB6C8"
+    }
+  }
+}
