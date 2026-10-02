@@ -1,7 +1,0 @@
-<Solution>
-  <Folder Name="/src/">
-    <Project Path="src/EchoCat.AI/EchoCat.AI.csproj" />
-    <Project Path="src/EchoCat.Core/EchoCat.Core.csproj" />
-    <Project Path="src/EchoCat.Desktop/EchoCat.Desktop.csproj" />
-  </Folder>
-</Solution>
